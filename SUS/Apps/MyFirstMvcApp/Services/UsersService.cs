@@ -47,7 +47,7 @@ namespace BattleCards.Services
             return !this.db.Users.Any(x => x.Username == username);
         }
 
-        public static string ComputeHash(string input)
+        private static string ComputeHash(string input)
         {
             var bytes = Encoding.UTF8.GetBytes(input);
             using var hash = SHA512.Create();
