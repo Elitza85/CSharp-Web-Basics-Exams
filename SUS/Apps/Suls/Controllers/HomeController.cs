@@ -1,4 +1,5 @@
-﻿using SUS.HTTP;
+﻿using Suls.ViewModels;
+using SUS.HTTP;
 using SUS.MvcFramework;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,14 @@ namespace Suls.Controllers
         [HttpGet("/")]
         public HttpResponse Index()
         {
-            return this.View();
+            if (this.IsUserSignedIn())
+            {
+                return this.View(new List<HomePageProblemViewModel>(), "IndexLoggedIn");
+            }
+            else
+            {
+                return this.View();
+            }
         }
     }
 }
