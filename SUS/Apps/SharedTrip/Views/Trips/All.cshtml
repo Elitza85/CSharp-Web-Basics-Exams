@@ -15,11 +15,10 @@
                 <tbody>
                     @foreach (var trip in Model)
                     {
-
                         <tr>
                             <th scope="row">@trip.StartPoint</th>
                             <td>@trip.EndPoint</td>
-                            <td>@trip.TimeFormatted</td>
+                            <td>@trip.DepartureTimeFormatted</td>
                             <td>@trip.AvailableSeats</td>
                             <td>
                                 <div class="button-holder">
